@@ -1,0 +1,54 @@
+{
+  "name": "myapp",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.12",
+    "@mui/x-data-grid": "^5.17.25",
+    "@reduxjs/toolkit": "^1.9.0",
+    "axios": "^1.2.0",
+    "cors": "^2.8.5",
+    "firebase": "^9.17.1",
+    "install": "^0.13.0",
+    "npm": "^8.19.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-lazy-load-image-component": "^1.5.6",
+    "react-loader-spinner": "^5.3.4",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.4.3",
+    "react-scripts": "5.0.1",
+    "react-stripe-checkout": "^2.6.3",
+    "react-toastify": "^9.1.1",
+    "recharts": "^2.4.3",
+    "redux-persist": "^6.0.0",
+    "styled-components": "^5.3.6",
+    "timeago.js": "^4.0.2",
+    "vercel": "^28.10.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

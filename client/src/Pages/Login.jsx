@@ -2,6 +2,7 @@ import { useState } from "react";
 // import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components"
 import { mobile } from '../Responsive'
+import Loader from "../components/Loader"
 // import { login } from "../Redux/apiCalls";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -66,7 +67,7 @@ const Links = styled.a`
   cursor:pointer;
 `
 const Login = () => {
-
+  const [isLoading, setIsLoading] = useState(false)
   let navigate = useNavigate();
   const [credintial, setcredintial] = useState({
     username: "",
@@ -75,24 +76,26 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-      const response = await fetch("https://e-commerce-api-99id.onrender.com/api/auth/login", {    
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      // set username & password
-      body: JSON.stringify({ username: credintial.username, password: credintial.password })
-    });   
-    const res = await response.json();
+    try{
+      setIsLoading(true)
+       const response = await fetch("https://e-commerce-api-99id.onrender.com/api/auth/login", {    
+       method: 'POST',
+       headers: {
+         'Content-Type': 'application/json'
+       },
+       // set username & password
+       body: JSON.stringify({ username: credintial.username, password: credintial.password })
+     });   
+     var res = await response.json();
+    }catch(e){
+      toast.error(e)
+    }finally{
+      setIsLoading(false)
+    }
     if (!res.sucess) {
-      toast.error("Wrong crendentiast");
+      toast.error("Invalid User");
     } 
-    try {
-      
-    } catch (error) {
-      if (res.sucess) {
-        // remove all item after click logout
+    if (res.sucess) {
         localStorage.setItem("username", credintial.username);
         localStorage.setItem("token", res.accesstoken);
         localStorage.setItem("isAdmin", res.isAdmin);
@@ -103,12 +106,8 @@ const Login = () => {
           navigate('/');
         }
       }
-      else{
-        toast.error("Invalid user..")
-      }
     }
-      
-    }
+           
   const handlechange = (e) => {
     setcredintial({ ...credintial, [e.target.name]: e.target.value });
   }
@@ -118,22 +117,24 @@ const Login = () => {
   //   login(dispatch, { username, password })
   // }
   return (
-    <Container>
+    <Container>   
+   { isLoading?<Loader/>:
       <Wrapper>
         <Title>SIGN IN</Title>
         <Form onSubmit={handleSubmit}>
           <Input placeholder="username" name="username"
             type='Username' value={credintial.username}
-            onChange={handlechange} />
+            onChange={handlechange} required />
           <Input placeholder="password" name="password"
             type='password' value={credintial.password}
-            onChange={handlechange} />
+            onChange={handlechange} required/>
           <Button disabled={(!credintial.username) || (!credintial.password)}>LOGIN</Button>
           <Link to='/register'>
             <Links>CREATE A NEW ACCOUNT</Links>
           </Link>
         </Form>
       </Wrapper>
+    }
     </Container>
   )
 }

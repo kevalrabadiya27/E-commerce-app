@@ -43,10 +43,10 @@ justify-content:flex-end;
 ${mobile({ flex: 2, justifyContent: 'center', marginLeft: '-16px' })}
 `
 const MenuItem = styled.div`
-font-size:14px;
+font-size:17px;
 cursor:pointer;
 margin-left:25px;
-${mobile({ fontSize: '11px', marginLeft: '5px' })}
+${mobile({ fontSize: '15px', marginLeft: '16px' })}
 `;
 
 const Searchcontainer = styled.div`
@@ -92,11 +92,12 @@ const Navbar = () => {
                 <Right>
                     {(
                         !localStorage.getItem("username") ?
-                            <><Link to='/register' style={{ textDecoration: 'none' }}>
+                            <>
+                            {/* <Link to='/register' style={{ textDecoration: 'none' }}>
                                 <MenuItem>SIGN UP</MenuItem>
-                            </Link>
+                            </Link> */}
                                 <Link to='/login' style={{ textDecoration: 'none' }}>
-                                    <MenuItem>SIGN IN</MenuItem>
+                                    <MenuItem>LOGIN</MenuItem>
                                 </Link>
                                 <Link to='/Cart' style={{ textDecoration: 'none' }}>
                                     <MenuItem>
@@ -111,7 +112,7 @@ const Navbar = () => {
                                     <MenuItem>
                                         <Badge badgeContent={qunatity} color="secondary">
                                             <ShoppingCartOutlined />
-                                        </Badge> CART
+                                        </Badge> 
                                     </MenuItem>
                                 </Link>
                                 <MenuItem>

@@ -4,7 +4,7 @@ import {Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
-
+import Loader from "../components/Loader"
 
 const Container = styled.div`
   width: 100vw;
@@ -71,16 +71,25 @@ const Button2 = styled.button`
 
 const Register = () => {
   const navigate = useNavigate();
+  const[isLoading,setIsLoading] = useState(false)
   const [credintial, setcredintial] = useState({
     name: "",
     username: "",
     gmail: "",
     password: ""
   });
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if ((!credintial.gmail) || (!credintial.name) || (!credintial.password) || (!credintial.username)) {
-      toast.error("All field are mandatory")
+    try{
+      setIsLoading(true)
+      if ((!credintial.gmail) || (!credintial.name) || (!credintial.password) || (!credintial.username)) {
+        toast.error("All field are mandatory")
+      }
+    }catch(e){
+      toast.error(e)
+    }finally{
+      setIsLoading(false)
     }
     const response = await fetch("https://e-commerce-api-99id.onrender.com/api/auth/register", {
       method: 'POST',
@@ -105,6 +114,7 @@ const Register = () => {
   return (
     <>
       <Container>
+    {isLoading?<Loader/>:
         <Wrapper>
           <Title>CREATE AN ACCOUNT</Title>
           <Form onSubmit={handleSubmit}>
@@ -121,6 +131,7 @@ const Register = () => {
           </Button2>
           </Form>
         </Wrapper>
+    }
       </Container>
     </>
   )

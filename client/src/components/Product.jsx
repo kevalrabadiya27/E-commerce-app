@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { Link } from 'react-router-dom'
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import { toast } from "react-toastify";
 
 
 const Info = styled.div`
@@ -71,6 +72,11 @@ const[flag,setflag] = useState(true)
 
 const LikedProduct = ()=>{
     flag?setflag(false):setflag(true)
+    if(flag){
+        toast.success("liked Product")
+    }else{
+        toast.success("disliked Product")
+    }
 }
     return (
         <Conatiner>

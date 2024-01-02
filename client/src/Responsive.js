@@ -1,3 +1,4 @@
+
 import { css } from "styled-components"
 
 export const mobile = (props) => {
@@ -5,5 +6,9 @@ export const mobile = (props) => {
     @media(max-width: 380px) {
         ${props}
     }
+    @media(max-width: 480px) {
+        ${props}
+    }
     ` ;
+
 };

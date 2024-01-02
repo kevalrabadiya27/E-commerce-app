@@ -1,4 +1,4 @@
-import { LoginOutlined, Search, ShoppingCartOutlined } from '@mui/icons-material'
+import { LocalOfferOutlined, LoginOutlined, Search, ShoppingCartOutlined } from '@mui/icons-material'
 import React from 'react'
 import Badge from '@mui/material/Badge';
 import styled from 'styled-components'
@@ -8,7 +8,6 @@ import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom';
 import "react-toastify/dist/ReactToastify.css";
 import { deleteProductCart } from '../Redux/cartRedux';
-import { Avatar } from '@mui/material';
 
 const Container = styled.div`
    height:60px;
@@ -25,6 +24,7 @@ const Left = styled.div`
 flex:1;
 display:flex;
 align-item:center;
+${mobile({ marginLeft: '7px', })}
 `
 
 const Center = styled.div`
@@ -45,24 +45,24 @@ ${mobile({ flex: 2, justifyContent: 'center', marginLeft: '-16px' })}
 const MenuItem = styled.div`
 font-size:17px;
 cursor:pointer;
+font-weight:bolder;
 margin-left:25px;
-${mobile({ fontSize: '15px', marginLeft: '16px' })}
+${mobile({ fontSize: '15px', marginLeft: '15px' })}
 `;
 
-const Searchcontainer = styled.div`
-border: 0.5px solid lightgray;
-display: flex;
-align - item: center;
-margin - left: 25px;
-padding: 5px;
-${mobile({ marginLeft: '7px', })}
-`
 const Input = styled.input`
 width: 150px;
-font - size: 17px;
+font-size: 17px;
 border: none;
 outline: none;
-${mobile({ width: '50px ' })}
+margin-left:11px;
+font-weight:bolder;
+${mobile({ width: '50px ',marginLeft:'7px' })}
+`
+const Image  = styled.img`
+ width:8%;
+ height:100%;
+ ${mobile({ width: '33%', height:'100%' })};
 `
 
 const Navbar = () => {
@@ -83,21 +83,20 @@ const Navbar = () => {
         <Container>
             <Wrapper>
                 <Left>
-                    <Searchcontainer>
-                        <Input placeholder='Search' disabled />
-                        <Search style={{ color: "gray", fontSize: '33px' }} />
-                    </Searchcontainer>
+                        <Image src='https://cdn-icons-png.flaticon.com/128/321/321238.png'/>
+                        <Input placeholder='IND'/>
                 </Left>
                 <Center><Logo>xCart</Logo></Center>
                 <Right>
                     {(
                         !localStorage.getItem("username") ?
                             <>
-                            {/* <Link to='/register' style={{ textDecoration: 'none' }}>
-                                <MenuItem>SIGN UP</MenuItem>
-                            </Link> */}
-                                <Link to='/login' style={{ textDecoration: 'none' }}>
-                                    <MenuItem>LOGIN</MenuItem>
+                            <Link to='/Cart' style={{ textDecoration: 'none' }}>
+                                    <MenuItem>
+                                        <Badge badgeContent={1} color="success">
+                                            <LocalOfferOutlined />
+                                        </Badge>
+                                    </MenuItem>
                                 </Link>
                                 <Link to='/Cart' style={{ textDecoration: 'none' }}>
                                     <MenuItem>
@@ -105,9 +104,20 @@ const Navbar = () => {
                                             <ShoppingCartOutlined />
                                         </Badge>
                                     </MenuItem>
-                                </Link></>
+                                </Link>
+                                <Link to='/login' style={{ textDecoration: 'none' }}>
+                                    <MenuItem>LOGIN</MenuItem>
+                                </Link>
+                                </>
                             :
                             <>
+                            <Link to='/Cart' style={{ textDecoration: 'none' }}>
+                                    <MenuItem>
+                                        <Badge badgeContent={1} color="secondary">
+                                            <LocalOfferOutlined />
+                                        </Badge>
+                                    </MenuItem>
+                                </Link>
                                 <Link to='/Cart' style={{ textDecoration: 'none' }}>
                                     <MenuItem>
                                         <Badge badgeContent={qunatity} color="secondary">

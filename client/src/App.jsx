@@ -15,6 +15,7 @@ import NewUser from './Pages/newUser/NewUser'
 import ProductEdit from "./Pages/Editproduct/Product";
 import NewProduct from "./Pages/newProduct/NewProduct";
 import Protected from "./components/Protected";
+import Offer from "./components/Offer";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/product/:id" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
+          <Route path="offer" element={<Offer />} />
           <Route path="/register" element={<Register />} />
           {/* Admin Route */}
           <Route path="/dashboard" element={<Protected Components={Dashboard} />} />

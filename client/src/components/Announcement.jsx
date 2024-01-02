@@ -1,4 +1,4 @@
-import { Money } from "@mui/icons-material"
+
 import styled from "styled-components"
 
 
@@ -29,15 +29,19 @@ const Container = styled.div`
         width:100vw;
         font-size:15px;
     }
-`
+ }
+`;
+
 const Announcement = () => {
     return (
         <>
             <Container>
                 Super Deal Free Shoping on Order Over $30
+                <img src="https://cdn-icons-png.flaticon.com/128/331/331953.png" width={'30px'} height={'15px'}/>
             </Container>
         </>
     )
-}
+} 
 
-export default Announcement
+
+export default Announcement;

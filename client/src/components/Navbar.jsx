@@ -8,6 +8,7 @@ import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom';
 import "react-toastify/dist/ReactToastify.css";
 import { deleteProductCart } from '../Redux/cartRedux';
+import Offer from './Offer';
 
 const Container = styled.div`
    height:60px;
@@ -91,7 +92,7 @@ const Navbar = () => {
                     {(
                         !localStorage.getItem("username") ?
                             <>
-                            <Link to='/Cart' style={{ textDecoration: 'none' }}>
+                            <Link to='/Offer' style={{ textDecoration: 'none' }}>
                                     <MenuItem>
                                         <Badge badgeContent={1} color="success">
                                             <LocalOfferOutlined />

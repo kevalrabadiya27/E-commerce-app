@@ -109,7 +109,10 @@ const Register = () => {
   }
 
   const handleChange = (e) => {
-    setcredintial({ ...credintial, [e.target.name]: e.target.value });
+    setcredintial({ 
+      ...credintial,
+      [e.target.name]: e.target.value 
+    });
   }
   return (
     <>

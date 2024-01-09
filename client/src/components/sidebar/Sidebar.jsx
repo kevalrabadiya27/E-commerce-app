@@ -28,10 +28,12 @@ export default function Sidebar() {
                                 Home
                             </li>
                         </Link>
-                        <li className="sidebarListItem">
-                            <Timeline className="sidebarIcon" />
-                            Analytics
-                        </li>
+                        <Link to="/" className="link" style={{ textDecoration: 'none' }}>
+                            <li className="sidebarListItem">
+                            <LineStyle className="sidebarIcon" />
+                                Application
+                            </li>
+                        </Link>
                         <li className="sidebarListItem">
                             <TrendingUp className="sidebarIcon" />
                             Sales
@@ -58,8 +60,8 @@ export default function Sidebar() {
                             Transactions
                         </li>
                         <li className="sidebarListItem">
-                            <BarChart className="sidebarIcon" />
-                            Reports
+                            <Timeline className="sidebarIcon" />
+                            Analytics
                         </li>
                     </ul>
                 </div>

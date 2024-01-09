@@ -36,13 +36,6 @@ const Conatiner = styled.div`
    opacity:1;
 }
 `
-// const Circle = styled.div`
-//     width:200px;
-//     height:200px;
-//     border-radius:50%;
-//     background-color:white;
-//     position:absolute;
-// `
 const Image = styled.img`
 width:100%;
 height:100%;
@@ -73,14 +66,14 @@ const[flag,setflag] = useState(true)
 const LikedProduct = ()=>{
     flag?setflag(false):setflag(true)
     if(flag){
-        toast.success("liked Product")
+        toast.success("Liked Product")
     }else{
-        toast.success("disliked Product")
+        toast.success("DisLiked Product")
     }
 }
     return (
+        <>
         <Conatiner>
-            {/* <Image src={item.img} loading="lazy" alt="products" /> */}
             {
                 <LazyLoadImage
                     src={item.img}
@@ -108,6 +101,7 @@ const LikedProduct = ()=>{
                 </Icon>
             </Info>
         </Conatiner >
+        </>
     )
 }
 

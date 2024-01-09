@@ -34,7 +34,7 @@ export default function UserList() {
             renderCell: (params) => {
                 return (
                     <div className="userListUser">
-                        <img className="userListImg" src={params.row.avatar} alt="" />
+                        <img className="userListImg" src={'https://cdn.pixabay.com/photo/2015/03/04/22/35/avatar-659651_640.png'} alt="" />
                     </div>
                 );
             }
@@ -46,7 +46,7 @@ export default function UserList() {
             renderCell: (params) => {
                 return (
                     <div className="userListUser">
-                        {/* <img className="userListImg" src={params.row.avatar} alt="" /> */}
+                        {/* <img className="userListImg" src={''} alt="" /> */}
                         {params.row.username}
                     </div>
                 );

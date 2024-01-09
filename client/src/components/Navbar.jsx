@@ -1,4 +1,4 @@
-import { LocalOfferOutlined, LoginOutlined, Search, ShoppingCartOutlined } from '@mui/icons-material'
+import { DashboardCustomizeOutlined, LocalOfferOutlined, LoginOutlined, Search, ShoppingCartOutlined } from '@mui/icons-material'
 import React from 'react'
 import Badge from '@mui/material/Badge';
 import styled from 'styled-components'
@@ -34,21 +34,20 @@ text-align:center;
 `
 const Logo = styled.h1`
 font-weight:bold;
-${mobile({ fontSize: '22px', margin: '7px 18px' })}
+${mobile({ fontSize: '24px', margin: '7px 30px' })}
 `
 const Right = styled.div`
 flex:1;
 display:flex;
 align-items:center;
 justify-content:flex-end;
-${mobile({ flex: 2, justifyContent: 'center', marginLeft: '-16px' })}
+${mobile({ flex: 2, justifyContent: 'center', marginLeft: '18px' })}
 `
 const MenuItem = styled.div`
 font-size:17px;
 cursor:pointer;
-font-weight:bolder;
 margin-left:25px;
-${mobile({ fontSize: '15px', marginLeft: '15px' })}
+${mobile({ fontSize: '15px', marginLeft: '20px'})}
 `;
 
 const Input = styled.input`
@@ -58,12 +57,12 @@ border: none;
 outline: none;
 margin-left:11px;
 font-weight:bolder;
-${mobile({ width: '50px ',marginLeft:'7px' })}
+${mobile({ width: '50px ',marginLeft:'7px' ,display:'none'})}
 `
 const Image  = styled.img`
  width:8%;
  height:100%;
- ${mobile({ width: '33%', height:'100%' })};
+ ${mobile({ width: '50%', height:'100%' })};
 `
 
 const Navbar = () => {
@@ -98,17 +97,17 @@ const Navbar = () => {
                                             <LocalOfferOutlined />
                                         </Badge>
                                     </MenuItem>
-                                </Link>
-                                <Link to='/Cart' style={{ textDecoration: 'none' }}>
+                            </Link>
+                            <Link to='/Cart' style={{ textDecoration: 'none' }}>
                                     <MenuItem>
                                         <Badge badgeContent={qunatity} color="secondary">
                                             <ShoppingCartOutlined />
                                         </Badge>
                                     </MenuItem>
-                                </Link>
-                                <Link to='/login' style={{ textDecoration: 'none' }}>
+                             </Link>
+                            <Link to='/login' style={{ textDecoration: 'none' }}>
                                     <MenuItem>LOGIN</MenuItem>
-                                </Link>
+                            </Link>
                                 </>
                             :
                             <>

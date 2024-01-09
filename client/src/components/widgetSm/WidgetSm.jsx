@@ -24,7 +24,7 @@ export default function WidgetSm() {
                 {users.map((user) => (
                     <li className="widgetSmListItem" key={user._id}>
                         <img
-                            src={user.img || 'https://www.shutterstock.com/image-vector/forbidden-sign-isolated-stock-vector-600w-593347763.jpg'}
+                            src={user.img || 'https://cdn.pixabay.com/photo/2015/03/04/22/35/avatar-659651_640.png'}
                             alt=""
                             className="widgetSmImg"
                         />

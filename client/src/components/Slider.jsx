@@ -15,7 +15,7 @@ const Container = styled.div`
   position:reletive;
   margin-top:10px;
   overflow:hidden;
-  ${mobile({ width: '100vw' })}
+  ${mobile({ width: '100vw'})}
 `
 const Arrow = styled.div`
 width:50px;
@@ -37,7 +37,7 @@ z-index:2;
 ${mobile({ width: '30px', height: '30px' })}
 
 &:hover{
-    background-color:lightblue;
+    background-color:teal;
 }
 `
 const Wrapper = styled.div`
@@ -81,6 +81,7 @@ cursor:pointer;
 const InfoContainer = styled.div`
 flex:1;
 padding:50px;
+
 `
 
 const Slider = () => {

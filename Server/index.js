@@ -28,7 +28,7 @@ app.use("/api/checkout", stripeRoute);
 
 // default route
 app.get('/', (req, res) => {
-    res.send("e-commerce-api");
+    res.send('<center><h2>WELCOME TO X-CART API</h2></center>');
 })
 
 app.listen(process.env.PORT || 6050, () => {

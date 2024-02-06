@@ -1,4 +1,4 @@
-import { DashboardCustomizeOutlined, LocalOfferOutlined, LoginOutlined, Search, ShoppingCartOutlined } from '@mui/icons-material'
+import {LocalOfferOutlined, LoginOutlined, Search, ShoppingCartOutlined } from '@mui/icons-material'
 import React from 'react'
 import Badge from '@mui/material/Badge';
 import styled from 'styled-components'
@@ -8,7 +8,6 @@ import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom';
 import "react-toastify/dist/ReactToastify.css";
 import { deleteProductCart } from '../Redux/cartRedux';
-import Offer from './Offer';
 
 const Container = styled.div`
    height:60px;
@@ -62,7 +61,7 @@ ${mobile({ width: '50px ',marginLeft:'7px' ,display:'none'})}
 const Image  = styled.img`
  width:8%;
  height:100%;
- ${mobile({ width: '50%', height:'100%' })};
+ ${mobile({ width: '48%', height:'100%' })};
 `
 
 const Navbar = () => {
@@ -111,7 +110,7 @@ const Navbar = () => {
                                 </>
                             :
                             <>
-                            <Link to='/Cart' style={{ textDecoration: 'none' }}>
+                            <Link to='/Offer' style={{ textDecoration: 'none' }}>
                                     <MenuItem>
                                         <Badge badgeContent={1} color="secondary">
                                             <LocalOfferOutlined />

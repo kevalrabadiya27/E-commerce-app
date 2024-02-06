@@ -12,6 +12,7 @@ import {
     ChatBubbleOutline,
     WorkOutline,
     Report,
+    DashboardCustomizeOutlined,
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
@@ -24,7 +25,7 @@ export default function Sidebar() {
                     <ul className="sidebarList">
                         <Link to="/dashboard" className="link" style={{ textDecoration: 'none' }}>
                             <li className="sidebarListItem active">
-                                <LineStyle className="sidebarIcon" />
+                                <DashboardCustomizeOutlined className="sidebarIcon"/>
                                 Home
                             </li>
                         </Link>
